@@ -1,0 +1,18 @@
+<h2>// After — patrón State</h2>
+
+<div class="actions">
+  <button (click)="insertCoin()">Insertar moneda</button>
+  <button
+    *ngFor="let p of vm.product"
+    class="product-btn"
+    (click)="selectProduct(p)">
+    {{ p.name }}
+  </button>
+</div>
+
+<div class="log">
+  <div class="log-header">OUTPUT</div>
+  <ul>
+    <li *ngFor="let msg of log">{{ msg }}</li>
+  </ul>
+</div>

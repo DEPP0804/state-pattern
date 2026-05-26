@@ -1,0 +1,103 @@
+h2 {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 1rem;
+  color: var(--neon-purple);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-shadow: 0 0 16px rgba(179, 136, 255, 0.4);
+  margin-bottom: 1.5rem;
+}
+
+.stock {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  letter-spacing: 0.08em;
+  margin-bottom: 1.5rem;
+}
+
+.stock span {
+  color: var(--neon-blue);
+  text-shadow: 0 0 8px rgba(79, 195, 247, 0.4);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+button {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  padding: 0.5rem 1.2rem;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--neon-blue);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+button:hover {
+  border-color: var(--neon-blue);
+  background: var(--neon-blue-glow);
+  box-shadow: 0 0 12px rgba(79, 195, 247, 0.15);
+}
+
+button.product-btn {
+  color: var(--neon-purple);
+  border-color: rgba(179, 136, 255, 0.2);
+}
+
+button.product-btn:hover {
+  border-color: var(--neon-purple);
+  background: var(--neon-purple-glow);
+  box-shadow: 0 0 12px rgba(179, 136, 255, 0.15);
+}
+
+.log {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  overflow: hidden;
+}
+
+.log-header {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  letter-spacing: 0.1em;
+  padding: 0.6rem 1rem;
+  border-bottom: 1px solid var(--border);
+  background: var(--surface-2);
+}
+
+.log ul {
+  list-style: none;
+  padding: 0.5rem 0;
+  max-height: 240px;
+  overflow-y: auto;
+}
+
+.log li {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.78rem;
+  color: var(--text);
+  padding: 0.4rem 1rem;
+  border-bottom: 1px solid rgba(79, 195, 247, 0.05);
+  animation: fadeIn 0.2s ease;
+}
+
+.log li::before {
+  content: '> ';
+  color: var(--neon-blue);
+  opacity: 0.5;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateX(-4px); }
+  to   { opacity: 1; transform: translateX(0); }
+}

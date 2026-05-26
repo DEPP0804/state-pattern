@@ -1,1 +1,32 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Outfit:wght@300;400;600&display=swap');
+
+:root {
+  --bg: #0a0a0f;
+  --surface: #111118;
+  --surface-2: #1a1a25;
+  --neon-blue: #4fc3f7;
+  --neon-purple: #b388ff;
+  --neon-blue-glow: rgba(79, 195, 247, 0.15);
+  --neon-purple-glow: rgba(179, 136, 255, 0.15);
+  --text: #e0e0f0;
+  --text-muted: #6b6b8a;
+  --border: rgba(79, 195, 247, 0.2);
+  --border-hover: rgba(179, 136, 255, 0.5);
+  --radius: 8px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg);
+  background-image:
+    radial-gradient(ellipse at 20% 20%, rgba(79, 195, 247, 0.04) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 80%, rgba(179, 136, 255, 0.04) 0%, transparent 50%);
+  color: var(--text);
+  font-family: 'Outfit', sans-serif;
+  min-height: 100vh;
+}

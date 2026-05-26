@@ -1,0 +1,14 @@
+<h2>// Before — sin patrón</h2>
+<p class="stock">STOCK: <span>{{ vm.stock }}</span></p>
+
+<div class="actions">
+  <button (click)="insertCoin()">Insertar moneda</button>
+  <button (click)="selectProduct()">Seleccionar producto</button>
+</div>
+
+<div class="log">
+  <div class="log-header">OUTPUT</div>
+  <ul>
+    <li *ngFor="let msg of log">{{ msg }}</li>
+  </ul>
+</div>
