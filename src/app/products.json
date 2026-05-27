@@ -3,17 +3,17 @@
         {
             "id": 1,
             "name": "Producto A",
-            "stock": 2
+            "stock": 1
         },
         {
             "id": 2,
             "name": "Producto B",
-            "stock": 2
+            "stock": 1
         },
         {
             "id": 3,
             "name": "Producto C",
-            "stock": 2
+            "stock": 1
         }
     ]
 }
