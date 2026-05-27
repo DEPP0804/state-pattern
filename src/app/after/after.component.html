@@ -6,7 +6,7 @@
     *ngFor="let p of vm.product"
     class="product-btn"
     (click)="selectProduct(p)">
-    {{ p.name }}
+    {{ p.name }} ({{ p.stock }})
   </button>
 </div>
 

@@ -13,6 +13,6 @@ export class ConMonedaState extends State {
             this.machine.setState(this.machine.entregando);
             return this.machine.selectProduct(product);
         }
-        return "Producto agotado";
+        return "Producto agotado, por favor seleccione otro producto";
     }
 }
