@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, ElementRef, effect } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { VendingMachine } from './vending-machine';
 import { Product } from '../product.interface';
@@ -18,5 +18,17 @@ export class AfterComponent {
 
   selectProduct(product: Product) {
     this.vm.selectProduct(product);
+  }
+
+  @ViewChild('logContainer') logContainer!: ElementRef<HTMLDivElement>;
+
+  constructor() {
+    effect(() => {
+      this.vm.log();
+      queueMicrotask(() => {
+        const el = this.logContainer.nativeElement;
+        el.scrollTop = el.scrollHeight;
+      });
+    });
   }
 }
