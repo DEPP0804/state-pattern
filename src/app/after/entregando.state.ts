@@ -22,7 +22,7 @@ export class EntregandoState extends State {
                 this.machine.addLog(`Entregando ${product.name} - stock restante: ${product.stock}`);
             }
             this.machine.selectedProduct = null;
-            this.machine.setState(this.machine.sinMoneda);
+            this.machine.evaluateStateAfterDelivery();
         }, 2000);
     }
 }
