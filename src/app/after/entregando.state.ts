@@ -1,17 +1,28 @@
 import { State } from "./state.abstract";
-import { Product } from "../product.interface";
 
 export class EntregandoState extends State {
     
     insertCoin(): string {
+        return "Estamos entregando su producto - Moneda devuelta";
+    }
+
+    selectProduct(): string {
         return "Espere, estamos entregando su producto";
     }
 
-    selectProduct(product?: Product): string {
-        product!.stock--;
-        const productName = this.machine.selectedProduct?.name ?? "Producto";
-        this.machine.selectedProduct = null;
-        this.machine.setState(this.machine.sinMoneda);
-        return `Entregando ${productName} - stock restante: ${product!.stock}`;
+    override onEnter(): void {
+        setTimeout(() => {
+            const product = this.machine.selectedProduct;
+            if (product) {
+                this.machine.product.update(products =>
+                    products.map(p =>
+                        p === product ? { ...p, stock: p.stock - 1 } : p
+                    )
+                );
+                this.machine.addLog(`Entregando ${product.name} - stock restante: ${product.stock}`);
+            }
+            this.machine.selectedProduct = null;
+            this.machine.setState(this.machine.sinMoneda);
+        }, 2000);
     }
 }

@@ -6,4 +6,6 @@ export abstract class State {
 
   abstract insertCoin(): string;
   abstract selectProduct(product?: Product): string;
+
+  onEnter?(): void;
 }

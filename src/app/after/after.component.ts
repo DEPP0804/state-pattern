@@ -11,13 +11,12 @@ import { Product } from '../product.interface';
 })
 export class AfterComponent {
   vm = new VendingMachine();
-  log: string[] = [];
 
   insertCoin() {
-    this.log.push(this.vm.insertCoin());
+    this.vm.insertCoin();
   }
 
   selectProduct(product: Product) {
-    this.log.push(this.vm.selectProduct(product));
+    this.vm.selectProduct(product);
   }
 }

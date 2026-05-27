@@ -9,9 +9,9 @@ export class ConMonedaState extends State {
 
     selectProduct(product?: Product): string {
         if (product && product.stock > 0) {
-            this.machine.selectedProduct = product ?? null;
+            this.machine.selectedProduct = product;
             this.machine.setState(this.machine.entregando);
-            return this.machine.selectProduct(product);
+            return "Procesando entrega...";
         }
         return "Producto agotado, por favor seleccione otro producto";
     }

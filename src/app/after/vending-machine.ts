@@ -1,3 +1,4 @@
+import { signal } from '@angular/core';
 import { State } from './state.abstract';
 import { SinMonedaState } from './sin-moneda.state';
 import { ConMonedaState } from './con-moneda.state';
@@ -13,22 +14,27 @@ export class VendingMachine {
 
   private state: State = this.sinMoneda;
   
-  product: Product[] = productsData.products;
+  product = signal<Product[]>(productsData.products);
   selectedProduct: Product | null = null;
 
-  allOutOfStock(): boolean {
-    return this.product.every(p => p.stock === 0);
-  }
+  log = signal<string[]>([]);
 
   setState(state: State) {
     this.state = state;
+    this.state.onEnter?.();
   }
 
-  insertCoin(): string {
-    return this.state.insertCoin();
+  insertCoin(): void {
+    const msg = this.state.insertCoin();
+    this.addLog(msg);
   }
 
-  selectProduct(product?: Product): string {
-    return this.state.selectProduct(product);
+  selectProduct(product?: Product): void {
+    const msg = this.state.selectProduct(product);
+    this.addLog(msg);
+  }
+
+  addLog(message: string) {
+    this.log.update(logs => [...logs, message]);
   }
 }
