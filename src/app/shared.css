@@ -80,6 +80,13 @@ button.product-btn:hover {
   padding: 0.5rem 0;
   max-height: 240px;
   overflow-y: auto;
+
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.log ul::-webkit-scrollbar {
+  display: none;
 }
 
 .log li {
