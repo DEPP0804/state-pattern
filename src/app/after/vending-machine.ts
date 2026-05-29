@@ -37,7 +37,7 @@ export class VendingMachine {
   }
 
   allOutOfStock(): boolean {
-    return this.product().every(p => p.stock === 0);
+    return this.products().every(p => p.stock === 0);
   }
   
   evaluateStateAfterDelivery(): void {
