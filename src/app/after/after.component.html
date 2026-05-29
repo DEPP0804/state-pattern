@@ -3,7 +3,7 @@
 <div class="actions">
   <button (click)="insertCoin()">Insertar moneda</button>
   <button
-    *ngFor="let p of vm.product()"
+    *ngFor="let p of vm.products()"
     class="product-btn"
     (click)="selectProduct(p)">
     {{ p.name }} ({{ p.stock }})
@@ -13,6 +13,6 @@
 <div class="log">
   <div class="log-header">OUTPUT</div>
   <ul #logContainer>
-    <li *ngFor="let msg of vm.log()">{{ msg }}</li>
+    <li *ngFor="let msg of vm.logs()">{{ msg }}</li>
   </ul>
 </div>

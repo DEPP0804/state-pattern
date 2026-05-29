@@ -14,10 +14,10 @@ export class VendingMachine {
 
   private state: State = this.sinMoneda;
   
-  product = signal<Product[]>(productsData.products);
+  products = signal<Product[]>(productsData.products);
   selectedProduct: Product | null = null;
 
-  log = signal<string[]>([]);
+  logs = signal<string[]>([]);
 
   setState(state: State) {
     this.state = state;
@@ -35,6 +35,6 @@ export class VendingMachine {
   }
 
   addLog(message: string) {
-    this.log.update(logs => [...logs, message]);
+    this.logs.update(logs => [...logs, message]);
   }
 }

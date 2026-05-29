@@ -14,7 +14,7 @@ export class EntregandoState extends State {
         setTimeout(() => {
             const product = this.machine.selectedProduct;
             if (product) {
-                this.machine.product.update(products =>
+                this.machine.products.update(products =>
                     products.map(p =>
                         p === product ? { ...p, stock: p.stock - 1 } : p
                     )

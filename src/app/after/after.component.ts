@@ -24,7 +24,7 @@ export class AfterComponent {
 
   constructor() {
     effect(() => {
-      this.vm.log();
+      this.vm.logs();
       queueMicrotask(() => {
         const el = this.logContainer.nativeElement;
         el.scrollTop = el.scrollHeight;
