@@ -3,13 +3,14 @@ export class VendingMachine {
   stock: number = 3;
 
   insertCoin(): string {
-    if (this.state === "SIN_MONEDA") {
-      this.state = "CON_MONEDA";
-      return "Moneda insertada.";
-    } else if (this.state === "CON_MONEDA") {
-      return "Ya hay una moneda insertada.";
-    } else {
-      return "Espera, entregando producto...";
+    switch (this.state) {
+      case "SIN_MONEDA":
+        this.state = "CON_MONEDA";
+        return "Moneda insertada.";
+      case "CON_MONEDA":
+        return "Ya hay una moneda insertada.";
+      case "ENTREGANDO":
+        return "Espera, entregando producto...";
     }
   }
 

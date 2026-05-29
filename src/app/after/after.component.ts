@@ -24,7 +24,7 @@ export class AfterComponent {
 
   constructor() {
     effect(() => {
-      this.vm.log();
+      this.vm.logs();
       queueMicrotask(() => {
         if (this.logContainer) {
           const el = this.logContainer.nativeElement;
