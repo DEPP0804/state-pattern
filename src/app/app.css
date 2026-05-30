@@ -4,7 +4,7 @@ nav {
   justify-content: space-between;
   padding: 1rem 2rem;
   border-bottom: 1px solid var(--border);
-  background: rgba(10, 10, 15, 0.8);
+  background: rgba(10, 10, 15, 0.85);
   backdrop-filter: blur(12px);
   position: sticky;
   top: 0;
@@ -50,7 +50,7 @@ nav {
 }
 
 main {
-  padding: 2rem;
-  max-width: 640px;
+  padding: 1.5rem 2rem;
+  max-width: 680px;
   margin: 0 auto;
 }

@@ -1,18 +1,27 @@
-<h2>// After — patrón State</h2>
+<div class="vm-body">
+  <div class="vm-title">// After — patrón State</div>
 
-<div class="actions">
-  <button (click)="insertCoin()">Insertar moneda</button>
-  <button
-    *ngFor="let p of vm.products()"
-    class="product-btn"
-    (click)="selectProduct(p)">
-    {{ p.name }} ({{ p.stock }})
+  <button class="vm-coin-btn" (click)="insertCoin()">
+    <i class="ti ti-coin" style="font-size: 1.3rem; vertical-align: -3px; margin-right: 8px;"></i>
+    INSERTAR MONEDA
   </button>
-</div>
 
-<div class="log">
-  <div class="log-header">OUTPUT</div>
-  <ul #logContainer>
-    <li *ngFor="let msg of vm.logs()">{{ msg }}</li>
-  </ul>
+  <div class="vm-products">
+    <button
+      *ngFor="let p of vm.products()"
+      class="vm-prod-btn"
+      (click)="selectProduct(p)">
+      {{ p.name }}
+      <span class="prod-stock">({{ p.stock }})</span>
+    </button>
+  </div>
+
+  <div class="vm-divider"></div>
+
+  <div class="vm-screen">
+    <div class="vm-screen-label">OUTPUT</div>
+    <ul #logContainer>
+      <li *ngFor="let msg of vm.logs()">{{ msg }}</li>
+    </ul>
+  </div>
 </div>

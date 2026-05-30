@@ -1,14 +1,23 @@
-<h2>// Before — sin patrón</h2>
-<p class="stock">STOCK: <span>{{ vm.stock }}</span></p>
+<div class="vm-body">
+  <div class="vm-title">// Before — sin patrón</div>
 
-<div class="actions">
-  <button (click)="insertCoin()">Insertar moneda</button>
-  <button (click)="selectProduct()">Seleccionar producto</button>
-</div>
+  <button class="vm-coin-btn" (click)="insertCoin()">
+    <i class="ti ti-coin" style="font-size: 1.3rem; vertical-align: -3px; margin-right: 8px;"></i>
+    INSERTAR MONEDA
+  </button>
 
-<div class="log">
-  <div class="log-header">OUTPUT</div>
-  <ul>
-    <li *ngFor="let msg of log">{{ msg }}</li>
-  </ul>
+  <div class="vm-products">
+    <button class="vm-prod-btn" (click)="selectProduct()">
+      Seleccionar Producto<br>({{ vm.stock }})
+    </button>
+  </div>
+
+  <div class="vm-divider"></div>
+
+  <div class="vm-screen">
+    <div class="vm-screen-label">OUTPUT</div>
+    <ul>
+      <li *ngFor="let msg of log">{{ msg }}</li>
+    </ul>
+  </div>
 </div>
