@@ -14,12 +14,13 @@ export class EntregandoState extends State {
         setTimeout(() => {
             const product = this.machine.selectedProduct;
             if (product) {
+                const updatedStock = product.stock - 1;
                 this.machine.products.update(products =>
                     products.map(p =>
-                        p === product ? { ...p, stock: p.stock - 1 } : p
+                        p === product ? { ...p, stock: updatedStock } : p
                     )
                 );
-                this.machine.addLog(`Entregando ${product.name} - stock restante: ${product.stock}`);
+                this.machine.addLog(`Entregando ${product.name} - stock restante: ${updatedStock}`);
             }
             this.machine.selectedProduct = null;
             this.machine.setState(this.machine.sinMoneda);
