@@ -24,8 +24,9 @@
 body {
   background-color: var(--bg);
   background-image:
-    radial-gradient(ellipse at 20% 20%, rgba(79, 195, 247, 0.04) 0%, transparent 50%),
-    radial-gradient(ellipse at 80% 80%, rgba(179, 136, 255, 0.04) 0%, transparent 50%);
+    radial-gradient(ellipse at 15% 15%, rgba(79, 195, 247, 0.12) 0%, transparent 45%),
+    radial-gradient(ellipse at 85% 85%, rgba(179, 136, 255, 0.12) 0%, transparent 45%),
+    radial-gradient(ellipse at 50% 50%, rgba(179, 136, 255, 0.04) 0%, transparent 70%);
   color: var(--text);
   font-family: 'Outfit', sans-serif;
   min-height: 100vh;

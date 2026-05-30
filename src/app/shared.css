@@ -1,104 +1,136 @@
-h2 {
-  font-family: 'Share Tech Mono', monospace;
-  font-size: 1rem;
-  color: var(--neon-purple);
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  text-shadow: 0 0 16px rgba(179, 136, 255, 0.4);
-  margin-bottom: 1.5rem;
+.vm-body {
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: 20px;
+  padding: 2rem 2.5rem;
+  box-sizing: border-box;
 }
 
-.stock {
+.vm-title {
   font-family: 'Share Tech Mono', monospace;
   font-size: 0.8rem;
-  color: var(--text-muted);
-  letter-spacing: 0.08em;
-  margin-bottom: 1.5rem;
+  color: var(--neon-purple);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  text-shadow: 0 0 16px rgba(179, 136, 255, 0.4);
+  text-align: center;
+  margin-bottom: 2rem;
 }
 
-.stock span {
-  color: var(--neon-blue);
-  text-shadow: 0 0 8px rgba(79, 195, 247, 0.4);
-}
-
-.actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-  margin-bottom: 1.5rem;
-}
-
-button {
+.vm-coin-btn {
+  display: block;
+  width: 100%;
+  padding: 1.4rem;
   font-family: 'Share Tech Mono', monospace;
-  font-size: 0.78rem;
-  letter-spacing: 0.06em;
-  padding: 0.5rem 1.2rem;
-  background: transparent;
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
+  font-size: 1.1rem;
+  letter-spacing: 0.12em;
   color: var(--neon-blue);
+  background: rgba(79, 195, 247, 0.05);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
   cursor: pointer;
+  margin-bottom: 1rem;
   transition: all 0.2s ease;
+  text-align: center;
 }
 
-button:hover {
+.vm-coin-btn:hover:not(:disabled) {
   border-color: var(--neon-blue);
   background: var(--neon-blue-glow);
-  box-shadow: 0 0 12px rgba(79, 195, 247, 0.15);
+  box-shadow: 0 0 20px rgba(79, 195, 247, 0.15);
 }
 
-button.product-btn {
+.vm-coin-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.vm-products {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.vm-prod-btn {
+  padding: 1.6rem 0.75rem;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.9rem;
+  letter-spacing: 0.06em;
   color: var(--neon-purple);
-  border-color: rgba(179, 136, 255, 0.2);
+  background: rgba(179, 136, 255, 0.05);
+  border: 1.5px solid rgba(179, 136, 255, 0.2);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+  line-height: 1.6;
 }
 
-button.product-btn:hover {
+.vm-prod-btn:hover:not(:disabled) {
   border-color: var(--neon-purple);
   background: var(--neon-purple-glow);
-  box-shadow: 0 0 12px rgba(179, 136, 255, 0.15);
+  box-shadow: 0 0 20px rgba(179, 136, 255, 0.15);
 }
 
-.log {
-  border: 1px solid var(--border);
+.vm-prod-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.vm-prod-btn .prod-stock {
+  font-size: 1rem;
+  color: rgba(179, 136, 255, 0.5);
+  display: block;
+  margin-top: 4px;
+}
+
+.vm-divider {
+  height: 1px;
+  background: var(--border);
+  margin: 1.25rem 0;
+}
+
+.vm-screen {
+  background: var(--bg);
+  border: 1.5px solid var(--border);
   border-radius: var(--radius);
-  background: var(--surface);
   overflow: hidden;
 }
 
-.log-header {
+.vm-screen-label {
   font-family: 'Share Tech Mono', monospace;
-  font-size: 0.7rem;
+  font-size: 0.65rem;
   color: var(--text-muted);
-  letter-spacing: 0.1em;
-  padding: 0.6rem 1rem;
+  letter-spacing: 0.18em;
+  padding: 0.5rem 1rem;
   border-bottom: 1px solid var(--border);
   background: var(--surface-2);
 }
 
-.log ul {
+.vm-screen ul {
   list-style: none;
-  padding: 0.5rem 0;
-  max-height: 240px;
+  padding: 0.4rem 0;
+  margin: 0;
+  min-height: 120px;
+  max-height: 200px;
   overflow-y: auto;
-
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
 
-.log ul::-webkit-scrollbar {
-  display: none;
-}
+.vm-screen ul::-webkit-scrollbar { display: none; }
 
-.log li {
+.vm-screen li {
   font-family: 'Share Tech Mono', monospace;
-  font-size: 0.78rem;
+  font-size: 0.85rem;
   color: var(--text);
   padding: 0.4rem 1rem;
   border-bottom: 1px solid rgba(79, 195, 247, 0.05);
   animation: fadeIn 0.2s ease;
 }
 
-.log li::before {
+.vm-screen li::before {
   content: '> ';
   color: var(--neon-blue);
   opacity: 0.5;
